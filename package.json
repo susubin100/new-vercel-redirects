@@ -1,0 +1,60 @@
+{
+  "name": "vercel-redirects",
+  "version": "0.0.0-semantically-released",
+  "description": "Command-line utility to manage your Vercel project redirects. Doubles as a url shortener.",
+  "homepage": "https://github.com/codfish/vercel-redirects",
+  "author": {
+    "name": "Chris O'Donnell",
+    "email": "dev@codfish.io",
+    "url": "https://codfish.io"
+  },
+  "files": [
+    "src"
+  ],
+  "bin": {
+    "vercel-redirects": "src/cli.js"
+  },
+  "type": "module",
+  "exports": "./src/index.js",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.9.2",
+    "chalk": "^5.0.1",
+    "commander": "^9.4.0",
+    "find-up": "^6.3.0",
+    "load-json-file": "^7.0.1",
+    "normalizr": "^3.6.0",
+    "vercel": "^27.4.0",
+    "write-json-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "cod-scripts": "^11.0.0",
+    "husky": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=14.16",
+    "npm": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codfish/vercel-redirects.git"
+  },
+  "scripts": {
+    "format": "cod-scripts format",
+    "lint": "cod-scripts lint",
+    "lint:commit": "cod-scripts commitlint",
+    "test": "NODE_OPTIONS=--experimental-vm-modules cod-scripts test",
+    "shorten": "node src/cli.js",
+    "prepare": "husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/cod-scripts/eslint.js"
+    ],
+    "rules": {
+      "no-console": "off",
+      "import/extensions": "off"
+    }
+  }
+}
